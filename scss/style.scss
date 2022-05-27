@@ -1,0 +1,154 @@
+@forward "../scss/partials/";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+body {
+  background-image: url(/images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: var(--violet);
+
+  display: grid;
+  place-content: center;
+}
+
+// typography ==========================
+
+h1,
+p {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+// Design Layot ========================
+
+.logo {
+  max-width: 10rem;
+}
+
+main {
+  width: 85%;
+  max-width: 375px;
+  margin-inline: auto;
+}
+
+.flex {
+  &__illustration {
+    margin-block: 4rem;
+  }
+
+  &__text > p {
+    margin-block: 1.5rem;
+
+    max-width: 33ch;
+    margin-inline: auto;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+
+  &__register {
+    font-family: "Open Sans", sans-serif;
+    color: var(--violet);
+
+    padding: 1.125rem 5rem;
+    border: none;
+    border-radius: 2.25rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+
+  svg {
+    max-width: 2.5rem;
+  }
+}
+
+// @media queries for bigger screen ========================
+
+@media all and (min-width: 480px) {
+  body {
+    background-image: url(/images/bg-desktop.svg);
+    background-position: center bottom;
+  }
+
+  main,
+  footer {
+    width: 95%;
+    max-width: 1440px;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    margin-top: 4rem;
+
+    &__illustration {
+      margin: 0;
+    }
+
+    &__text {
+      h1,
+      p {
+        text-align: left;
+      }
+
+      h1 {
+        max-width: 20ch;
+        font-size: 2.5rem;
+      }
+
+      p {
+        max-width: 56ch;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .button {
+    justify-content: flex-start;
+  }
+
+  footer {
+    justify-content: flex-end;
+    svg {
+      max-width: 2.5rem;
+    }
+  }
+
+  // :hover effect ========================
+  .button {
+    &__register:hover {
+      background-color: var(--soft-magenta);
+      color: hsl(0, 0%, 100%);
+      transition: ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+  footer {
+    svg:hover {
+      fill: var(--soft-magenta);
+      transition: ease-in-out;
+      cursor: pointer;
+    }
+  }
+}

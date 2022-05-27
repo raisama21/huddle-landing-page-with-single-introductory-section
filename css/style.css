@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-image: url(/images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: var(--violet);
+  display: grid;
+  place-content: center;
+}
+
+h1,
+p {
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.logo {
+  max-width: 10rem;
+}
+
+main {
+  width: 85%;
+  max-width: 375px;
+  margin-inline: auto;
+}
+
+.flex__illustration {
+  margin-block: 4rem;
+}
+.flex__text > p {
+  margin-block: 1.5rem;
+  max-width: 33ch;
+  margin-inline: auto;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+.button__register {
+  font-family: "Open Sans", sans-serif;
+  color: var(--violet);
+  padding: 1.125rem 5rem;
+  border: none;
+  border-radius: 2.25rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+footer svg {
+  max-width: 2.5rem;
+}
+
+@media all and (min-width: 480px) {
+  body {
+    background-image: url(/images/bg-desktop.svg);
+    background-position: center bottom;
+  }
+
+  main,
+footer {
+    width: 95%;
+    max-width: 1440px;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+  .flex__illustration {
+    margin: 0;
+  }
+  .flex__text h1,
+.flex__text p {
+    text-align: left;
+  }
+  .flex__text h1 {
+    max-width: 20ch;
+    font-size: 2.5rem;
+  }
+  .flex__text p {
+    max-width: 56ch;
+    font-size: 1.2rem;
+  }
+
+  .button {
+    justify-content: flex-start;
+  }
+
+  footer {
+    justify-content: flex-end;
+  }
+  footer svg {
+    max-width: 2.5rem;
+  }
+
+  .button__register:hover {
+    background-color: var(--soft-magenta);
+    color: hsl(0deg, 0%, 100%);
+    transition: ease-in-out;
+    cursor: pointer;
+  }
+
+  footer svg:hover {
+    fill: var(--soft-magenta);
+    transition: ease-in-out;
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
